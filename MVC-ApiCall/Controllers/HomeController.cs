@@ -14,9 +14,9 @@ namespace MVC_ApiCall.Controllers
             _rickandmortyservice = service;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int page=1)
         {
-            var characterResult = _rickandmortyservice.GetCharacters();
+            var characterResult = _rickandmortyservice.GetCharacters(page);
             return View(characterResult);
         }
 

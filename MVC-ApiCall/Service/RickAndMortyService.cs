@@ -6,7 +6,7 @@ namespace MVC_ApiCall.Service
 
     public interface IRickAndMortyService
     {
-        public CharacterResults GetCharacters();
+        public CharacterResults GetCharacters(int page);
     }
 
     public class RickAndMortyService:IRickAndMortyService
@@ -18,11 +18,11 @@ namespace MVC_ApiCall.Service
             _rickandmortyRepository = repository;
         }
 
-        public CharacterResults GetCharacters()
+        public CharacterResults GetCharacters(int page)
         {
             // repository'e erişmemiz lazım
 
-            return _rickandmortyRepository.GetCharacters();
+            return _rickandmortyRepository.GetCharacters(page);
         }
     }
 }
