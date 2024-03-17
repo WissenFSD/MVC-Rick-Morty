@@ -23,7 +23,7 @@ namespace MVC_ApiCall.Controllers
         {
 
             var characterResult = _rickandmortyservice.GetCharacters(page);
-            if (page >1 && next==0) {
+            if (page >1 || next==0) {
 
 
                 Min = 1;
