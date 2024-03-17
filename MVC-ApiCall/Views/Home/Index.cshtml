@@ -3,11 +3,18 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
+@foreach (var characters in @Model)
+{
+    <div class="card" style="width: 18rem; float:left;">
+        <img src=@characters.Image class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">@characters.Name</h5>
+            <p class="card-text">@characters.Id</p>
+            <p class="card-text">@characters.Species</p>
+            <p class="card-text">@characters.Status</p>
+            <p class="card-text">@characters.Gender</p>
+            <a href="#" class="btn btn-primary">Rick And Morty</a>
+        </div>
+    </div>
+}
+
