@@ -20,11 +20,7 @@ namespace MVC_ApiCall.Controllers
             return View(characters);
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
+ 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

@@ -9,7 +9,7 @@ namespace MVC_ApiCall
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            builder.Services.AddControllersWithViews();
+            builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
             //Baðýmlýlýklar eklendi
             builder.Services.AddScoped<IRickAndMortyService, RickAndMortyService>();

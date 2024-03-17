@@ -3,11 +3,52 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
+<style>
+
+    .two{
+
+        float:left;
+        margin:3%;
+        border:3px solid gray;
+        border-radius:10px;
+    }
+    body{
+
+        background-color:burlywood;
+    }
+
+</style>
+
+
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+        <li class="page-item disabled">
+            <a class="page-link">Previous</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+        </li>
+    </ul>
+</nav>
+
+@foreach(Character item in Model)
+{
+    
+
+    <div class="card two" style="width: 18rem;">
+        <img src=@item.Image class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">@item.Name</h5>
+            <p class="card-text">@item.Status</p>
+            <a href="#" class="btn btn-outline-warning">Go somewhere</a>
+        </div>
+    </div>
+
+}
+
+
+

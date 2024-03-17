@@ -6,14 +6,14 @@ namespace MVC_ApiCall.Repository
 {
     public interface IRickAndMortyRepository
     {
-        public List<Character> GetCharacters();
+        public CharacterResults GetCharacters();
 
     }
 
 
     public class RickAndMortyRepository : IRickAndMortyRepository
     {
-        public List<Character> GetCharacters()
+        public CharacterResults GetCharacters()
         {
             //RestSharp ile apiye istek atmak
             var restClient = new RestClient("https://rickandmortyapi.com/api");
@@ -25,7 +25,7 @@ namespace MVC_ApiCall.Repository
 
             var characterResults = JsonConvert.DeserializeObject<CharacterResults>(response.Content);
 
-            return characterResults.results;
+            return characterResults;
         }
 
         
